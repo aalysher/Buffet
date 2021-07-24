@@ -13,7 +13,7 @@ class UserSerializer(serializers.ModelSerializer):
         fields = ('phone', 'name', 'pin', 'active')
 
     def create(self, validated_data):
-        pin = create_pin(validated_data['phone'], self.Meta.model)
+        pin = create_pin(validated_data['phone'])
         return self.Meta.model.objects.create(**validated_data, pin=pin)
 
 

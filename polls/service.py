@@ -1,13 +1,15 @@
-from polls.models import User, Pin, Buffet
+from polls.models import User, Pin, Buffet, Student
 
 
-def create_pin(phone, obj):
+def create_pin(phone):
     """Создает новый пин по последним 6 цифрам номера телефона"""
     number = 0
-    pin = int(phone[-6:])
-    while obj.objects.filter(pin=pin + number):
+    phone_number_slice = int(phone[-6:])
+    pin = str(phone_number_slice + number).zfill(6)
+    while Pin.objects.filter(pin=pin):
         number += 1
-    return str(pin + number).zfill(6)
+        pin = str(phone_number_slice + number).zfill(6)
+    return pin
 
 
 def get_total_sum(validate_data):

@@ -31,4 +31,5 @@ urlpatterns = [
 
     path('payment/<int:pin>/', views.get_debt_sum_by_pin),
     path('payment/make/', views.make_payment),
+
     ]
