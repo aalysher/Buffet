@@ -1,7 +1,6 @@
 from django.urls import path
 from . import views
 
-
 urlpatterns = [
     path('user/<int:pin>/', views.find_user_by_id),
     path('user/all/', views.find_all_users),
@@ -32,4 +31,4 @@ urlpatterns = [
     path('payment/<int:pin>/', views.get_debt_sum_by_pin),
     path('payment/make/', views.make_payment),
 
-    ]
+]
