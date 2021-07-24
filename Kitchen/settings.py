@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-5!w5_d81&6*2ge5h3@w$6sv8s7-$!5yonqp9v6*4a+i-05qkq)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['buffetapp.herokuapp.com', '127.0.0.1']
 
@@ -78,27 +78,27 @@ WSGI_APPLICATION = 'Kitchen.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd22sjjig7kng74',
-        'USER': 'fgjhypcutyedmy',
-        'PASSWORD': 'b527c8d53c01d57fed9f0d479023048980ad2c80c52946db849f6a0e1dd758e2',
-        'HOST': 'ec2-54-211-160-34.compute-1.amazonaws.com',
-        'PORT': '5432',
-    }
-}
-
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'base_for_kitchen',
-#         'USER': 'postgres',
-#         'PASSWORD': 'postgres',
-#         'HOST': 'localhost',
-#         'PORT': '',
+#         'NAME': 'd22sjjig7kng74',
+#         'USER': 'fgjhypcutyedmy',
+#         'PASSWORD': 'b527c8d53c01d57fed9f0d479023048980ad2c80c52946db849f6a0e1dd758e2',
+#         'HOST': 'ec2-54-211-160-34.compute-1.amazonaws.com',
+#         'PORT': '5432',
 #     }
 # }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'base_for_kitchen',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'localhost',
+        'PORT': '',
+    }
+}
 
 
 # Password validation
