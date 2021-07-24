@@ -7,7 +7,7 @@ def create_pin(phone, obj):
     pin = int(phone[-6:])
     while obj.objects.filter(pin=pin + number):
         number += 1
-    return pin + number
+    return str(pin + number).zfill(6)
 
 
 def get_total_sum(validate_data):
